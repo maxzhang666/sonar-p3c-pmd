@@ -288,17 +288,35 @@
   </profiles>
 
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
+<!--  <distributionManagement>-->
+<!--    <snapshotRepository>-->
+<!--      <id>ossrh</id>-->
+<!--      <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--    </snapshotRepository>-->
+<!--    <repository>-->
+<!--      <id>ossrh</id>-->
+<!--      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
+<!--    </repository>-->
+<!--  </distributionManagement>-->
+  <repositories>
     <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <id>nexus</id>
+      <url>http://local.server42.ziel.cn:50100/repository/maven-public/</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>nexus</id>
+      <url>http://local.server42.ziel.cn:50100/repository/maven-public/</url>
+    </pluginRepository>
+  </pluginRepositories>
+  <distributionManagement>
+    <repository>
+      <id>nexus-releases</id>
+      <url>http://local.server42.ziel.cn:50100/repository/3rd-part/</url>
+      <uniqueVersion>true</uniqueVersion>
     </repository>
   </distributionManagement>
-
   <modules>
     <module>sonar-pmd-plugin</module>
     <module>integration-test</module>
